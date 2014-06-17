@@ -11,7 +11,7 @@
  * 戻り値　：なし
  * 処理概要：Image構造体の初期化を行う
  * ******************************************** */
-void
+static void
 InitializeImage(Image *img){
 	img->Width = 0;
 	img->Height = 0;
@@ -32,7 +32,7 @@ InitializeImage(Image *img){
  * 処理概要：イメージの画素を格納する構造体の作成
  * 　　　　　を行う。
  * ******************************************** */
-unsigned char**
+static unsigned char**
 MakeImageStruct(int Height, int Width){
 	unsigned char **Brightness = (unsigned char**)malloc(sizeof(unsigned char*)*Height);
 	if (Brightness == NULL){
@@ -60,7 +60,7 @@ MakeImageStruct(int Height, int Width){
  * 戻り値　：なし
  * 処理概要：イメージ構造体の解放を行う
  * ******************************************** */
-void
+static void
 DelateImageStruct(Image *img){
 	free(img->Pallet->b);
 	free(img->Pallet->g);
