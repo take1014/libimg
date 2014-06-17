@@ -1,0 +1,1 @@
+copyright Yuki-Takehara
