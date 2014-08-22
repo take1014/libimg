@@ -1,27 +1,33 @@
 #ifndef LIBIMGCONF_H
 #define LIBIMGCONF_H
 
-#define OK                                    0      /* 正常値                                                */
-#define ERR_IMG_READ_FILEOPEN             -1000      /* ファイルオープンエラー                                */
-#define ERR_IMG_READ_FILETYPE             -1001      /* ファイルタイプエラー                                  */
-#define ERR_IMG_READ_BITDEPTH             -1002      /* ビット深度エラー（８ビット、２４ビットのみ）          */
-#define ERR_IMG_READ_MEMORY               -1003      /* メモリ確保エラー                                      */
-#define ERR_IMG_WRITE_FILEOPEN            -2000     /* ファイルオープンエラー                                */
-#define ERR_IMG_WRITE_COLORMEMORY         -2001     /* カラーパレットのメモリ確保エラー                      */
-#define ERR_IMG_WRITE_IMAGEDATAMEMORY     -2002     /* イメージデータ用メモリ確保エラー                      */
-#define ERR_IMG_INVERSE_BITDEPTH          -3000      /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_LINERTRANSFORM_BITDEPTH   -4000     /* ビット深度エラー（８ビットのみ）                      */
+#define OK                                     0      /* 正常値                                                */
+#define ERR_IMG_READ_FILEOPEN              -1000      /* ファイルオープンエラー                                */
+#define ERR_IMG_READ_FILETYPE              -1001      /* ファイルタイプエラー                                  */
+#define ERR_IMG_READ_BITDEPTH              -1002      /* ビット深度エラー（８ビット、２４ビットのみ）          */
+#define ERR_IMG_READ_MEMORY                -1003      /* メモリ確保エラー                                      */
+#define ERR_IMG_WRITE_FILEOPEN             -2000     /* ファイルオープンエラー                                */
+#define ERR_IMG_WRITE_COLORMEMORY          -2001     /* カラーパレットのメモリ確保エラー                      */
+#define ERR_IMG_WRITE_IMAGEDATAMEMORY      -2002     /* イメージデータ用メモリ確保エラー                      */
+#define ERR_IMG_INVERSE_BITDEPTH           -3000      /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_LINERTRANSFORM_BITDEPTH    -4000     /* ビット深度エラー（８ビットのみ）                      */
 //#define Err_Smoothimg_struct_BitDepth               -5000     /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_DITHER_BITDEPTH           -6000     /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_DITHER_DITHERTYPE         -6001     /* ディザ行列型エラー                                    */
-#define ERR_IMG_DITHER_MEMORY             -6002     /* ディザ行列メモリ確保エラー                            */
-#define ERR_IMG_DITHER_IMAGESIZE          -6003     /* イメージサイズがブロックサイズで割り切れないとエラー  */
-#define ERR_IMG_BINARIZE_BITDEPTH         -7000     /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_BINARIZE_THRESHOLD        -7001     /* 2値化閾値の範囲エラー                                 */
-#define ERR_IMG_DIFUSE_BITDEPTH           -8000     /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_DIFUSE_MEMORY             -8001     /* メモリ確保エラー                                      */
-#define ERR_IMG_SOBELFILTER_BITDEPTH      -9000     /* ビット深度エラー（８ビットのみ）                      */
-#define ERR_IMG_SOBELFILTER_PIXELVALUE    -9001     /* ピクセル変換エラー                                    */
+#define ERR_IMG_DITHER_BITDEPTH            -6000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_DITHER_DITHERTYPE          -6001     /* ディザ行列型エラー                                    */
+#define ERR_IMG_DITHER_MEMORY              -6002     /* ディザ行列メモリ確保エラー                            */
+#define ERR_IMG_DITHER_IMAGESIZE           -6003     /* イメージサイズがブロックサイズで割り切れないとエラー  */
+#define ERR_IMG_BINARIZE_BITDEPTH          -7000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_BINARIZE_THRESHOLD         -7001     /* 2値化閾値の範囲エラー                                 */
+#define ERR_IMG_DIFUSE_BITDEPTH            -8000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_DIFUSE_MEMORY              -8001     /* メモリ確保エラー                                      */
+#define ERR_IMG_SOBELFILTER_BITDEPTH       -9000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_SOBELFILTER_FILTERTYPE     -9001     /* フィルタータイプエラー　　　　　　　　　　　　　　　  */
+#define ERR_IMG_SOBELFILTER_PIXELVALUE     -9002     /* ピクセル変換エラー                                    */
+#define ERR_IMG_SMOOTH_BITDEPTH           -10000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_SMOOTH_FILTERTYPE         -10001     /* フィルタータイプエラー                                */
+#define ERR_IMG_FFT_BITDEPTH              -11000     /* ビット深度エラー（８ビットのみ）                      */
+#define ERR_IMG_FFT_MEMORY                -11001     /* メモリ確保エラー */
+
 
 #define BMPHEADERSIZE          14                       /* ファイルヘッダのサイズ                 */
 #define INFOHEADERSIZE         40                       /* 情報ヘッダのサイズ                     */
@@ -32,6 +38,7 @@
 #define COLORPALLETSIZE48BIT 1024                       /* 8ビットの場合のカラーパレットのサイズ  */
 #define MAXBRIGHTNESS         255                       /* 使用するグレー階調数（０?２５５）     */
 #define BLOCKSIZE               4                       /* ディザ処理実施字のブロックの横画素数   */
+#define PI         3.141592653589                       /* 円周率 */
 
 unsigned char BitMask[8] = { 0x08,0x04,0x02,0x01,       /* ２値画像処理のビット演算用       */
                              0x08,0x04,0x02,0x01 };
@@ -67,6 +74,18 @@ int VerticalSobel[3][3] = {                     /* Sobel垂直方向微分フィ
    {-1,-2,-1},
    { 0, 0, 0},
    { 1, 2, 1}
+};
+
+int SmoothFilter1[3][3] = {
+   {1,1,1},
+   {1,1,1},
+   {1,1,1}
+};
+
+int SmoothFilter2[3][3] = {
+   {1,1,1},
+   {1,2,1},
+   {1,1,1}
 };
 
 #endif /* LIBIMGCONF_H */
