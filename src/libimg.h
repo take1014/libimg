@@ -80,15 +80,17 @@ typedef struct img_struct_info{
 }img_struct;
 
 /* 関数のプロトタイプ宣言 */
-int img_read(char *InputFileName, img_struct *img);       /* イメージ入力(1,8,24ビットイメージの場合のみ) */
-int img_write(char *OutputFileName, img_struct *img);     /* イメージ出力 */
+int img_read(char *inputfileName, img_struct *img);       /* イメージ入力(1,8,24ビットイメージの場合のみ) */
+int img_write(char *outputfileName, img_struct *img);     /* イメージ出力 */
 int img_color2gray(img_struct *img);                      /* 24bit→8bitグレーにイメージ変換 */
 int img_inverse(img_struct *img);                         /* イメージ反転 */
 int img_linertransform(img_struct *img);                  /* イメージの線形変換 */
-int img_dither(img_struct *img,int DitherType);           /* 組織的ディザ法 */
-int img_binarize(img_struct *img ,int Threshold);         /* 手動で２値化 */
+int img_dither(img_struct *img,int ditherType);           /* 組織的ディザ法 */
+int img_binarize(img_struct *img ,int threshold);         /* 手動で２値化 */
 int img_difuse(img_struct *img);                          /* 誤差拡散処理 */
-int img_sobelfilter(img_struct *img,int FilterType);      /* Sobelフィルタ処理 */
+int img_sobelfilter(img_struct *img,int filterType);      /* Sobelフィルタ処理 */
+int img_smooth(img_struct *img,int filterType);           /* 線形平滑化 */
+int img_fft(img_struct *img);                             /* フーリエ変換 */
 
 #ifdef __cplusplus
 }
